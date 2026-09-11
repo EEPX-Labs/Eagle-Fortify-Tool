@@ -1,6 +1,6 @@
 # Eagle Fortify Tool 3.1
 
-![EEPX Labs]([assets/EEPXL_Logo_Trans.png](https://github.com/EEPX-Labs/Projects-Backgrounds/blob/main/EFT_GH_Background.jpg))
+![EEPX Labs][https://github.com/EEPX-Labs/Projects-Backgrounds/blob/main/EFT_GH_Background.jpg]
 
 **Eagle Fortify Tool** is a local-first password security utility by **EEPX Lab**.
 
