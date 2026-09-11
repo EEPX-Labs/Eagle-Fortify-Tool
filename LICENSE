@@ -1,13 +1,20 @@
 Copyright (c) 2026 EEPX Labs
 All rights reserved.
 
-Terms and Conditions for Use:
+EAGLE FORTIFY TOOL 3.1 - END USER LICENSE AGREEMENT (EULA) & DISCLAIMER
 
-1. Permission is granted to run and use this software strictly for its intended purpose.
-2. You are strictly PROHIBITED from:
-   - Modifying, altering, translating, or creating derivative works based on this software.
-   - Reverse engineering, decompiling, disassembling, or attempting to extract the source code.
-   - Redistributing, reselling, sublicensing, or sharing the software with third parties without written permission.
-   - Copying any branding, UI design, or proprietary features for use in other projects.
+1. PERMITTED USE & RESTRICTIONS
+Permission is granted to install and run Eagle Fortify Tool 3.1 (including the Desktop GUI Application and the Command Line Interface 'eftool') for personal or internal business operations. You are strictly PROHIBITED from:
+- Decompiling, reverse engineering, disassembling, or attempting to extract the source code of the application or the 'eftool' CLI utility.
+- Modifying, rebranding, or creating derivative tools based on this software.
+- Redistributing, reselling, sublicensing, or publicly hosting executable files or license keys without prior written consent.
+- Copying the UI/UX layout, workflow design, or branding elements of Eagle Fortify Tool.
 
-THIS SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND. IN NO EVENT SHALL THE AUTHOR BE LIABLE FOR ANY CLAIM OR DAMAGES.
+2. LOCAL DATA & ZERO-KNOWLEDGE DISCLAIMER
+- LOCAL STORAGE ONLY: Eagle Fortify Tool operates entirely offline on your local machine. No vault contents, generated passwords, email identities, or analytical data are transmitted to external servers or developer infrastructure.
+- LOSS OF MASTER ACCESS: Access to your encrypted vault is dependent solely on your Master Password. Because the software uses local zero-knowledge encryption, THE DEVELOPER HAS NO BACKDOOR, DOES NOT STORE YOUR MASTER PASSWORD, AND CANNOT RECOVER LOST PASSWORDS OR ENCRYPTED VAULT DATA UNDER ANY CIRCUMSTANCES.
+
+3. DISCLAIMER OF LIABILITY
+- USER RESPONSIBILITY: You are solely responsible for securing your host machine against malware, keyloggers, and physical tampering. The developer shall NOT be held liable for any data breaches or credential leaks originating from compromise of your local operating system.
+- MISUSE: The developer is not responsible for how generated passwords, passphrases, or email identities are utilized by the user.
+- NO WARRANTY: Eagle Fortify Tool 3.1 is provided "AS IS", without warranty of any kind, express or implied.
