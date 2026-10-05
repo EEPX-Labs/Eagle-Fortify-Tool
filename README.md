@@ -1,6 +1,6 @@
 # Eagle Fortify Tool
 
-![EEPX Labs](docs/EEPXL_Logo_Trans.png)
+![EEPX Labs](docs/EFT_GH_Background.jpg)
 
 Eagle Fortify Tool is a local password utility. It can generate strong
 passwords, check how strong a password is, create secure passphrases and
