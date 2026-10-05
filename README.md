@@ -35,14 +35,14 @@ Full walkthrough with explanations: **[📖 Visual User Guide](docs/USER_GUIDE.m
 
 ### Option 1 - Windows Installer (recommended)
 
-1. Run **`EagleFortifyTool-3.1.0-Setup.exe`**.
+1. Run **`EagleFortifyTool-3.2.0-Setup.exe`**.
 2. Click **Install**. The option **"Add eftool to PATH"** is already ticked by
    default, so the command line tool will work from every Command Prompt.
 3. Open a **new** Command Prompt window.
 
 ### Option 2 - Portable version
 
-1. Extract **`EagleFortifyTool-3.1.0-portable.zip`** to any folder (for
+1. Extract **`EagleFortifyTool-3.2.0-portable.zip`** to any folder (for
    example `C:\EagleFortify`).
 2. Run **`EagleFortifyTool.exe`** to open the app.
 3. To use `eftool` from any Command Prompt, add that folder to PATH:
@@ -61,9 +61,30 @@ Open any Command Prompt (new one, not one opened before installing) and type:
 eftool --version
 ```
 
-You should see `Eagle Fortify Tool 3.1.0`. If you see
+You should see `Eagle Fortify Tool 3.2.0`. If you see
 "`'eftool' is not recognized...`", close the Command Prompt window, open a
-new one, and try again.
+new one, and try again. The installer updates PATH automatically, but already
+open terminals keep the old environment.
+
+<details>
+<summary><b>Still not recognized in a new terminal? (click to expand)</b></summary>
+
+1. Confirm the install exists:
+   ```bat
+   dir "C:\Program Files\Eagle Fortify Tool\eftool.exe"
+   ```
+2. Confirm PATH contains the install folder (open a **new** terminal first):
+   ```bat
+   echo %PATH%
+   ```
+   You should see `C:\Program Files\Eagle Fortify Tool` in the output.
+3. If it is missing, reinstall and keep **"Add eftool to PATH"** ticked.
+4. If PATH looks right but `eftool` still fails, a stale development shim may
+   be shadowing it — remove any old `eftool.exe` under
+   `%APPDATA%\Python\Python3*\Scripts` and open a new terminal. (The v3.2.0
+   installer does this cleanup automatically.)
+
+</details>
 
 ---
 
