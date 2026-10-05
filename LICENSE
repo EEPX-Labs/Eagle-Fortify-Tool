@@ -1,10 +1,10 @@
 Copyright (c) 2026 EEPX Labs
 All rights reserved.
 
-EAGLE FORTIFY TOOL 3.1 - END USER LICENSE AGREEMENT (EULA) & DISCLAIMER
+EAGLE FORTIFY TOOL 3.2 - END USER LICENSE AGREEMENT (EULA) & DISCLAIMER
 
 1. PERMITTED USE & RESTRICTIONS
-Permission is granted to install and run Eagle Fortify Tool 3.1 (including the Desktop GUI Application and the Command Line Interface 'eftool') for personal or internal business operations. You are strictly PROHIBITED from:
+Permission is granted to install and run Eagle Fortify Tool 3.2 (including the Desktop GUI Application and the Command Line Interface 'eftool') for personal or internal business operations. You are strictly PROHIBITED from:
 - Decompiling, reverse engineering, disassembling, or attempting to extract the source code of the application or the 'eftool' CLI utility.
 - Modifying, rebranding, or creating derivative tools based on this software.
 - Redistributing, reselling, sublicensing, or publicly hosting executable files or license keys without prior written consent.
@@ -17,4 +17,4 @@ Permission is granted to install and run Eagle Fortify Tool 3.1 (including the D
 3. DISCLAIMER OF LIABILITY
 - USER RESPONSIBILITY: You are solely responsible for securing your host machine against malware, keyloggers, and physical tampering. The developer shall NOT be held liable for any data breaches or credential leaks originating from compromise of your local operating system.
 - MISUSE: The developer is not responsible for how generated passwords, passphrases, or email identities are utilized by the user.
-- NO WARRANTY: Eagle Fortify Tool 3.1 is provided "AS IS", without warranty of any kind, express or implied.
+- NO WARRANTY: Eagle Fortify Tool 3.2 is provided "AS IS", without warranty of any kind, express or implied.
