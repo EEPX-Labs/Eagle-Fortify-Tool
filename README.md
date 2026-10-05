@@ -1,6 +1,6 @@
-# Eagle Fortify Tool 3.1
+# Eagle Fortify Tool
 
-![EEPX Labs](https://github.com/EEPX-Labs/Projects-Backgrounds/blob/main/EFT_GH_Background.jpg)
+![EEPX Labs](assets/EEPXL_Logo_Trans.png)
 
 Eagle Fortify Tool is a local password utility. It can generate strong
 passwords, check how strong a password is, create secure passphrases and
@@ -13,6 +13,21 @@ You get two ways to use it:
 | --- | --- |
 | Desktop app | Start menu shortcut, desktop shortcut, or `EagleFortifyTool.exe` / `eagle-fortify-gui` |
 | Command line tool | Type `eftool` in any Command Prompt |
+| 📖 Visual user guide | **[docs/USER_GUIDE.md](docs/USER_GUIDE.md)** — screenshots + explanation of every feature |
+
+---
+
+## 📸 Feature tour
+
+Full walkthrough with explanations: **[📖 Visual User Guide](docs/USER_GUIDE.md)**
+
+| Dashboard | Password Generator | Encrypted Vault |
+|---|---|---|
+| ![Dashboard](docs/screenshots/01-dashboard.png) | ![Generator](docs/screenshots/02-generator-passwords.png) | ![Vault](docs/screenshots/07-vault-unlocked.png) |
+
+| Password Analyzer | Leak Checker | Email Generator |
+|---|---|---|
+| ![Analyzer](docs/screenshots/04-analyzer.png) | ![Leak Checker](docs/screenshots/05-leak-checker.png) | ![Email](docs/screenshots/09-email-generator.png) |
 
 ---
 
@@ -97,6 +112,27 @@ Or double-click:
 Backups you create are encrypted files too. Uninstalling the app does not
 delete your vault.
 
+## Privacy & zero-knowledge encryption
+
+Eagle Fortify Tool is built around a local, zero-knowledge security model:
+
+- **Fully local** - the vault, the password / passphrase / email generators
+  and the strength analyzer all run on your own device; nothing is uploaded
+  anywhere. The only network feature is the optional
+  `eftool leak-check "..."` command, which sends just the first five
+  characters of a SHA-1 hash (HIBP k-anonymity) - never the password itself.
+- **Encrypted at rest** - vault entries are sealed with **AES-256-GCM**, and
+  the encryption key is derived from your Master Password with
+  **PBKDF2-HMAC-SHA256** (600,000 iterations, random 32-byte salt).
+- **Zero knowledge** - EEPX Labs has no backdoor and no cloud sync. Your
+  Master Password never leaves your machine and is stored nowhere, so a lost
+  Master Password **cannot be recovered - not even by the developer** - and
+  an encrypted vault cannot be decrypted without it. Backup files are
+  encrypted vaults too.
+
+Keep your Master Password safe. If it is lost, your vault data cannot be
+recovered by anyone, including the developer.
+
 ## Uninstall
 
 - **Installer version:** Windows Settings → Apps → **Eagle Fortify Tool** →
@@ -109,4 +145,5 @@ delete your vault.
 
 ## License
 
-MIT - see [LICENSE](LICENSE).
+Proprietary - all rights reserved. See [LICENSE](LICENSE) for the terms and
+conditions of use.
