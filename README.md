@@ -8,7 +8,7 @@
 
 **A local-first password utility built to keep your credentials under your control.**
 
-[![Python](https://img.shields.io/badge/Python-3.12%2B-3776AB?style=for-the-badge&logo=python&logoColor=white)](https://www.python.org/)
+[![Python](https://img.shields.io/badge/Python-3.14-3776AB?style=for-the-badge&logo=python&logoColor=white)](https://www.python.org/)
 [![PySide6](https://img.shields.io/badge/PySide6-Desktop%20UI-41CD52?style=for-the-badge&logo=qt&logoColor=white)](https://doc.qt.io/qtforpython-6/)
 [![Security](https://img.shields.io/badge/AES--256--GCM-Encrypted-6C5CE7?style=for-the-badge&logo=letsencrypt&logoColor=white)](https://csrc.nist.gov/)
 [![Platform](https://img.shields.io/badge/Platform-Windows-0078D6?style=for-the-badge&logo=windows&logoColor=white)](https://www.microsoft.com/windows)
@@ -288,7 +288,7 @@ Eagle Fortify Tool combines a desktop interface with a command-line workflow and
 
 | Component | Technology |
 |---|---|
-| Programming language | Python |
+| Programming language | Python 3.14 |
 | Desktop interface | PySide6 / Qt for Python |
 | Vault encryption | AES-256-GCM |
 | Key derivation | PBKDF2-HMAC-SHA256 |
