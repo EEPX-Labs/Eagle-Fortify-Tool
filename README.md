@@ -1,170 +1,320 @@
 # Eagle Fortify Tool
 
-![EEPX Labs](docs/EFT_GH_Background.jpg)
+<div align="center">
 
-Eagle Fortify Tool is a local password utility. It can generate strong
-passwords, check how strong a password is, create secure passphrases and
-email identities, and keep your credentials in a private encrypted vault.
-Everything runs locally on your device - nothing is uploaded anywhere.
+<img src="docs/EFT_GitHub_Hero.png" alt="Eagle Fortify Tool — Local Password Security" width="100%">
 
-You get two ways to use it:
+### Local Security · Encrypted Vault · Privacy First
 
-| What | How to open it |
-| --- | --- |
-| Desktop app | Start menu shortcut, desktop shortcut, or `EagleFortifyTool.exe` / `eagle-fortify-gui` |
-| Command line tool | Type `eftool` in any Command Prompt |
-| 📖 Visual user guide | **[docs/USER_GUIDE.md](docs/USER_GUIDE.md)** — screenshots + explanation of every feature |
+**A local-first password utility built to keep your credentials under your control.**
+
+[![Python](https://img.shields.io/badge/Python-3.12%2B-3776AB?style=for-the-badge&logo=python&logoColor=white)](https://www.python.org/)
+[![PySide6](https://img.shields.io/badge/PySide6-Desktop%20UI-41CD52?style=for-the-badge&logo=qt&logoColor=white)](https://doc.qt.io/qtforpython-6/)
+[![Security](https://img.shields.io/badge/AES--256--GCM-Encrypted-6C5CE7?style=for-the-badge&logo=letsencrypt&logoColor=white)](https://csrc.nist.gov/)
+[![Platform](https://img.shields.io/badge/Platform-Windows-0078D6?style=for-the-badge&logo=windows&logoColor=white)](https://www.microsoft.com/windows)
+[![CLI](https://img.shields.io/badge/Interface-CLI%20%2B%20GUI-24292F?style=for-the-badge&logo=windows-terminal&logoColor=white)](#using-the-command-line-tool)
+
+[Features](#features) · [Installation](#install) · [Screenshots](#feature-tour) · [Privacy & Security](#privacy--zero-knowledge-encryption) · [User Guide](docs/USER_GUIDE.md)
+
+</div>
 
 ---
 
-## 📸 Feature tour
+## Overview
 
-Full walkthrough with explanations: **[📖 Visual User Guide](docs/USER_GUIDE.md)**
+**Eagle Fortify Tool** is a local password utility designed to help you create, analyze, and manage credentials without relying on a cloud account.
+
+It can generate strong passwords, evaluate password strength, create secure passphrases and email identities, check passwords against known data breaches, and store credentials in a private encrypted vault.
+
+Most features run locally on your device. Your vault and generated credentials are not uploaded to a remote server.
+
+The optional breach-check feature uses a network connection and follows the Have I Been Pwned k-anonymity approach.
+
+## Features
+
+- **Password Generator** — Generate strong passwords with configurable length and quantity.
+- **Password Analyzer** — Evaluate password strength and identify potential weaknesses.
+- **Passphrase Generator** — Create memorable passphrases using multiple words.
+- **Email Identity Generator** — Generate random email identities.
+- **Encrypted Vault** — Store credentials in an encrypted local vault.
+- **Breach Checker** — Check whether a password appears in known data breaches using a privacy-preserving hash-prefix lookup.
+- **Desktop Application** — Access the tools through a graphical interface.
+- **Command-Line Interface** — Run supported operations directly from Command Prompt.
+- **Offline-First Design** — Core password utilities work without an internet connection.
+- **Encrypted Backups** — Keep encrypted copies of your vault for safekeeping.
+
+## Feature Tour
+
+Explore the application's main features below.
+
+For the complete walkthrough, including screenshots and explanations, see the **[Visual User Guide](docs/USER_GUIDE.md)**.
 
 | Dashboard | Password Generator | Encrypted Vault |
-|---|---|---|
-| ![Dashboard](docs/screenshots/01-dashboard.png) | ![Generator](docs/screenshots/02-generator-passwords.png) | ![Vault](docs/screenshots/07-vault-unlocked.png) |
+|:---:|:---:|:---:|
+| ![Dashboard](docs/screenshots/01-dashboard.png) | ![Password Generator](docs/screenshots/02-generator-passwords.png) | ![Unlocked Vault](docs/screenshots/07-vault-unlocked.png) |
 
 | Password Analyzer | Leak Checker | Email Generator |
-|---|---|---|
-| ![Analyzer](docs/screenshots/04-analyzer.png) | ![Leak Checker](docs/screenshots/05-leak-checker.png) | ![Email](docs/screenshots/09-email-generator.png) |
+|:---:|:---:|:---:|
+| ![Password Analyzer](docs/screenshots/04-analyzer.png) | ![Leak Checker](docs/screenshots/05-leak-checker.png) | ![Email Generator](docs/screenshots/09-email-generator.png) |
 
 ---
 
 ## Install
 
-### Option 1 - Windows Installer (recommended)
+### Option 1 — Windows Installer (Recommended)
 
-1. Run **`EagleFortifyTool-3.2.0-Setup.exe`**.
-2. Click **Install**. The option **"Add eftool to PATH"** is already ticked by
-   default, so the command line tool will work from every Command Prompt.
-3. Open a **new** Command Prompt window.
+1. Download `EagleFortifyTool-3.2.0-Setup.exe` from the project's available release files.
+2. Run the installer.
+3. Follow the installation instructions.
+4. Keep **Add eftool to PATH** enabled if you want to use the command-line tool from any Command Prompt.
+5. Open a **new** Command Prompt window after installation.
 
-### Option 2 - Portable version
+Verify the installation:
 
-1. Extract **`EagleFortifyTool-3.2.0-portable.zip`** to any folder (for
-   example `C:\EagleFortify`).
-2. Run **`EagleFortifyTool.exe`** to open the app.
-3. To use `eftool` from any Command Prompt, add that folder to PATH:
-
-   - Press **Win + R**, type `sysdm.cpl`, press Enter.
-   - Advanced → **Environment Variables...**
-   - Under **User variables**, select **Path** → **Edit...** → **New**.
-   - Paste the folder you extracted the zip to (e.g. `C:\EagleFortify`) → **OK**.
-   - Open a **new** Command Prompt.
-
-### Verify the command line tool
-
-Open any Command Prompt (new one, not one opened before installing) and type:
-
-```
+```bat
 eftool --version
 ```
 
-You should see `Eagle Fortify Tool 3.2.0`. If you see
-"`'eftool' is not recognized...`", close the Command Prompt window, open a
-new one, and try again. The installer updates PATH automatically, but already
-open terminals keep the old environment.
+Expected output:
 
-<details>
-<summary><b>Still not recognized in a new terminal? (click to expand)</b></summary>
+```text
+Eagle Fortify Tool 3.2.0
+```
 
-1. Confirm the install exists:
+You can launch the desktop application from the Start Menu or desktop shortcut.
+
+### Option 2 — Portable Version
+
+1. Download `EagleFortifyTool-3.2.0-portable.zip`.
+2. Extract the archive to a folder, such as `C:\EagleFortify`.
+3. Run `EagleFortifyTool.exe` to open the desktop application.
+
+To use `eftool` from any Command Prompt, add the extracted folder to your Windows `PATH`:
+
+1. Press **Win + R**.
+2. Type `sysdm.cpl` and press Enter.
+3. Open **Advanced → Environment Variables**.
+4. Under **User variables**, select `Path` and click **Edit**.
+5. Click **New** and enter the extracted folder path.
+6. Confirm the changes and open a new Command Prompt.
+
+Then run:
+
+```bat
+eftool --version
+```
+
+### Troubleshooting: `eftool` Is Not Recognized
+
+If Windows reports that `eftool` is not recognized:
+
+1. Close the current Command Prompt and open a new one.
+2. Confirm that the application is installed:
+
    ```bat
    dir "C:\Program Files\Eagle Fortify Tool\eftool.exe"
    ```
-2. Confirm PATH contains the install folder (open a **new** terminal first):
+
+3. Check whether the installation directory is included in your `PATH`:
+
    ```bat
    echo %PATH%
    ```
-   You should see `C:\Program Files\Eagle Fortify Tool` in the output.
-3. If it is missing, reinstall and keep **"Add eftool to PATH"** ticked.
-4. If PATH looks right but `eftool` still fails, a stale development shim may
-   be shadowing it — remove any old `eftool.exe` under
-   `%APPDATA%\Python\Python3*\Scripts` and open a new terminal. (The v3.2.0
-   installer does this cleanup automatically.)
 
-</details>
+4. If the directory is missing, rerun the installer and enable **Add eftool to PATH**.
+5. If an older development executable is taking precedence, inspect your `PATH` for outdated `eftool.exe` files and remove obsolete entries where appropriate.
+
+The installer is intended to configure `PATH` automatically. Existing terminal windows may need to be reopened before the updated environment takes effect.
 
 ---
 
-## Using the command line tool
+## Using the Command-Line Tool
 
-```
-eftool --version                     Show the installed version
-eftool generate                      Generate a strong password
-eftool generate --length 24 --count 3   3 passwords, 24 characters each
-eftool analyze "your-password-here"  Show how strong a password is
-eftool passphrase                    Generate a secure passphrase
-eftool passphrase --words 5          Passphrase with 5 words
-eftool email                         Generate a random email identity
-eftool vault create                  Create your encrypted vault
-eftool vault list                    List what is stored in the vault
+The command-line interface is available through `eftool`.
+
+### Version
+
+```bat
+eftool --version
 ```
 
-**Notes**
+### Generate Passwords
 
-- All commands work offline.
-- `eftool leak-check "password"` is the only command that uses the network. It
-  checks whether a password appears in known data breaches. Only ever check
-  passwords you no longer use.
-
-## Opening the desktop app
-
-From a Command Prompt:
-
+```bat
+eftool generate
 ```
+
+Generate three passwords, each 24 characters long:
+
+```bat
+eftool generate --length 24 --count 3
+```
+
+### Analyze Password Strength
+
+```bat
+eftool analyze "your-password-here"
+```
+
+**Security note:** Avoid entering a real, currently used password directly into a command if your shell history or other local tools may retain commands. Prefer analyzing test credentials or use the desktop interface when appropriate.
+
+### Generate Passphrases
+
+```bat
+eftool passphrase
+```
+
+Generate a passphrase containing five words:
+
+```bat
+eftool passphrase --words 5
+```
+
+### Generate Email Identities
+
+```bat
+eftool email
+```
+
+### Manage the Encrypted Vault
+
+Create a vault:
+
+```bat
+eftool vault create
+```
+
+List stored vault entries:
+
+```bat
+eftool vault list
+```
+
+### Open the Desktop Application
+
+Launch the graphical interface from Command Prompt:
+
+```bat
 eagle-fortify-gui
 ```
 
-Or double-click:
+Alternatively, open `EagleFortifyTool.exe` in the portable installation or use the installed Start Menu or desktop shortcut.
 
-- **EagleFortifyTool.exe** (portable version), or
-- the **Eagle Fortify Tool** shortcut in the Start Menu or on the desktop
-  (installer version).
+### Command-Line Notes
+
+- Core commands work offline.
+- The optional `eftool leak-check` command requires an internet connection.
+- The breach checker uses a hash-prefix lookup rather than sending the original password to the breach-check service.
+- Available commands and options may vary by release. Run `eftool --help` or consult the user guide for the supported syntax.
 
 ---
 
-## Where your data lives
+## Privacy & Zero-Knowledge Encryption
 
-- Vault file: `%USERPROFILE%\.eagle_fortify\main.efv`
-- Settings: `%USERPROFILE%\.eagle_fortify\settings.json`
+Eagle Fortify Tool is designed around local control and encrypted credential storage.
 
-Backups you create are encrypted files too. Uninstalling the app does not
-delete your vault.
+### Local-First Architecture
 
-## Privacy & zero-knowledge encryption
+The vault, password generator, passphrase generator, email identity generator, and password analyzer operate locally.
 
-Eagle Fortify Tool is built around a local, zero-knowledge security model:
+The application does not require cloud synchronization or a remote account to use its core features.
 
-- **Fully local** - the vault, the password / passphrase / email generators
-  and the strength analyzer all run on your own device; nothing is uploaded
-  anywhere. The only network feature is the optional
-  `eftool leak-check "..."` command, which sends just the first five
-  characters of a SHA-1 hash (HIBP k-anonymity) - never the password itself.
-- **Encrypted at rest** - vault entries are sealed with **AES-256-GCM**, and
-  the encryption key is derived from your Master Password with
-  **PBKDF2-HMAC-SHA256** (600,000 iterations, random 32-byte salt).
-- **Zero knowledge** - EEPX Labs has no backdoor and no cloud sync. Your
-  Master Password never leaves your machine and is stored nowhere, so a lost
-  Master Password **cannot be recovered - not even by the developer** - and
-  an encrypted vault cannot be decrypted without it. Backup files are
-  encrypted vaults too.
+### Encrypted Vault
 
-Keep your Master Password safe. If it is lost, your vault data cannot be
-recovered by anyone, including the developer.
+Vault entries are encrypted using **AES-256-GCM**. The encryption key is derived from the Master Password using **PBKDF2-HMAC-SHA256**, with 600,000 iterations and a random 32-byte salt, according to the application's documented configuration.
+
+Encryption protects stored data, but it does not eliminate every security risk. Keep your device secure, use a strong Master Password, and maintain encrypted backups.
+
+### Optional Breach Checking
+
+The optional breach-check operation requires network access. It uses the Have I Been Pwned k-anonymity model, which sends only the first five characters of a SHA-1 password hash to the service for matching.
+
+The original password is not sent as part of that lookup. SHA-1 is used here for compatibility with the breach-check protocol, not as the vault's encryption algorithm.
+
+Only check passwords you no longer use whenever possible.
+
+### Master Password & Recovery
+
+Your Master Password is not stored as a recoverable password by the application. If it is lost, the encrypted vault may become permanently inaccessible.
+
+**Keep your Master Password safe.** The developer cannot recover vault contents without the required secret.
+
+### Backups & Local Storage
+
+Default data locations:
+
+| Data | Location |
+|---|---|
+| Encrypted vault | `%USERPROFILE%\.eagle_fortify\main.efv` |
+| Application settings | `%USERPROFILE%\.eagle_fortify\settings.json` |
+
+Vault backups are encrypted files as well. Store them somewhere secure and make sure you can access your Master Password when you need to restore them.
+
+Uninstalling the application does not automatically delete your vault.
+
+---
 
 ## Uninstall
 
-- **Installer version:** Windows Settings → Apps → **Eagle Fortify Tool** →
-  **Uninstall**. If you also enabled "Add eftool to PATH", the installer
-  removes it automatically.
-- **Portable version:** delete the folder. If you manually added it to PATH,
-  remove that PATH entry too.
+### Installer Version
+
+1. Open **Windows Settings → Apps**.
+2. Find **Eagle Fortify Tool**.
+3. Select **Uninstall**.
+
+If the installer configured the command-line tool in `PATH`, it is intended to remove that entry during uninstallation.
+
+### Portable Version
+
+Delete the folder where you extracted the portable archive.
+
+If you manually added that folder to `PATH`, remove the corresponding environment-variable entry as well.
+
+**Important:** Uninstalling or deleting the application folder does not necessarily remove your vault or settings. Review the data locations above if you intend to remove local application data.
+
+---
+
+## Documentation
+
+- **[Visual User Guide](docs/USER_GUIDE.md)** — Screenshots and explanations of the application's features.
+- **[Changelog](CHANGELOG.md)** — Release history and changes.
+- **[License](LICENSE)** — Terms and conditions governing use.
+
+---
+
+## Technology
+
+Eagle Fortify Tool combines a desktop interface with a command-line workflow and local encrypted storage.
+
+| Component | Technology |
+|---|---|
+| Programming language | Python |
+| Desktop interface | PySide6 / Qt for Python |
+| Vault encryption | AES-256-GCM |
+| Key derivation | PBKDF2-HMAC-SHA256 |
+| Supported platform | Windows |
+| User interfaces | Desktop GUI and CLI |
+
+---
+
+## Project
+
+**Eagle Fortify Tool** is developed under **EEPX Labs**.
+
+The project focuses on practical password utilities, local data control, and privacy-conscious credential management.
 
 ---
 
 ## License
 
-Proprietary - all rights reserved. See [LICENSE](LICENSE) for the terms and
-conditions of use.
+**Proprietary — All rights reserved.**
+
+See [LICENSE](LICENSE) for the full terms and conditions of use.
+
+<div align="center">
+
+**Eagle Fortify Tool**
+
+*Your credentials. Your device. Your control.*
+
+</div>
