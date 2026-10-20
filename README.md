@@ -59,7 +59,7 @@ For the complete walkthrough, including screenshots and explanations, see the [V
 
 ## Install
 
-### Option 1 — Windows Installer (Recommended)
+### Windows Installer (Recommended)
 
 1. Download `EagleFortifyTool-3.2.0-Setup.exe` from the project's release files
 2. Run the installer
@@ -81,20 +81,6 @@ Eagle Fortify Tool 3.2.0
 
 You can launch the desktop application from the Start Menu or desktop shortcut
 
-### Option 2 — Portable Version
-
-1. Download `EagleFortifyTool-3.2.0-portable.zip`
-2. Extract the archive to a folder, such as `C:\EagleFortify`
-3. Run `EagleFortifyTool.exe` to open the desktop application
-
-To use `eftool` from any Command Prompt, add the extracted folder to your Windows `PATH`
-
-1. Press **Win + R**
-2. Type `sysdm.cpl` and press Enter
-3. Open **Advanced → Environment Variables**
-4. Under **User variables**, select `Path` and click **Edit**
-5. Click **New** and enter the extracted folder path
-6. Confirm the changes and open a new Command Prompt
 
 Then run
 
