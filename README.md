@@ -2,7 +2,7 @@
 
 <div align="center">
 
-<img src="docs/EFT_GitHub_Hero.png" alt="Eagle Fortify Tool — Local Password Security" width="100%">
+
 
 ### Local Security · Encrypted Vault · Privacy First
 
